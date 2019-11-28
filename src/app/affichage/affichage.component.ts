@@ -15,8 +15,8 @@ export class AffichageComponent implements OnInit {
     this.theArticles=this.articlesService.lesArticles;
   }
 
-  getib(lib:String){
-    this.articlesService.getArticleById(lib);
+  getid(id:String){
+    this.articlesService.getArticleById(id);
   }
 
 }

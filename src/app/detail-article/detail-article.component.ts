@@ -11,14 +11,15 @@ import { Article } from '../article';
 })
 export class DetailArticleComponent implements OnInit {
   obj:Article;
-  lib: String;
+  id: String;
   
   
   constructor(private activatedRoute:ActivatedRoute, private router:Router, private articlesService:ArticlesService) { }
 
   ngOnInit() {
-    this.lib = this.activatedRoute.snapshot.params['libelle'];
-    this.obj=this.articlesService.getArticleById(this.lib);
+    this.id = this.activatedRoute.snapshot.params['id'];
+    this.obj=this.articlesService.getArticleById(this.id);
+    console.log(this.activatedRoute.snapshot.params['id']);
   
   }
 

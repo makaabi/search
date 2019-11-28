@@ -14,7 +14,7 @@ const routes: Routes = [
 {path:'ajoutarticle', component:AjoutArticleComponent},
 {path:'authentification', component:AuthentificationComponent},
 {path:'pageerreur', component:PageErreurComponent},
-{path:'affichage/:matricule', component:DetailArticleComponent},
+{path:'affichage/:id', component:DetailArticleComponent},
 {path:'', redirectTo:'authentification', pathMatch:'full'},
 {path:'**', component:PageErreurComponent}
 ];
