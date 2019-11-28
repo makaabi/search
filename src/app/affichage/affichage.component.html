@@ -1,0 +1,100 @@
+<app-menu></app-menu>
+
+<!-- upper section -->
+
+     
+<div class="row">
+        
+    <div class="col-sm-2">
+          <!-- left -->
+          <h3><i class="glyphicon glyphicon-briefcase"></i>Navigation</h3>
+          <hr>
+          
+          <table>
+              
+                  <tr><a href="#">Personnels</a></tr>
+                  <tr><a href="#">Heure de travail</a></tr>
+                  <tr><a href="#">Prime</a></tr>
+              
+          </table>
+          
+          <hr>
+          
+          </div><!-- /span-3 -->
+          
+        <div class="col-sm-10">
+              
+          <!-- column 2 -->	
+          <h2>Les articles disponibles en stock</h2>
+          <p>
+              <span style="font-weight: bold;color: red;"> Attention:</span> Si un article est en rouge, il est presque sold out, Veuillez le restocker.
+          </p>  
+           <hr>
+          
+           <div class="row">
+                <!-- center left-->	
+                 <div class="col-md-8">
+                  
+                  
+                  
+                  
+                 
+        <table class="table table-hover">
+                <thead class="bg-light text-capitalize">
+                        <tr>
+                            <th>Image</th>
+                            <th>Identifiant</th>
+                            <th>Libelle</th>
+                            <th>Prix</th>
+                            
+                            <th>Details</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        
+                    <ng-container  *ngFor="let a of theArticles">
+                        <tr >
+                            <td> <img [src]=a.photo width="50" height="50"/> </td>
+                            <td> {{a.id}} </td>
+                            <td> {{a.libelle}} </td>
+                            <td>{{a.prix}}DT</td>
+                            <td><button style="margin-left: 0px;" class="btn  btn-primary btn-block" [routerLink]="['/affichage',a.libelle]">Afficher les details</button></td>
+                        </tr>
+                    </ng-container>
+                        
+                    </tbody>
+        </table>                 
+                  
+                  </div><!--/col-->
+             
+                <!--center-right-->
+                <div class="col-md-4">
+                  
+                        <form class="form-inline my-2 my-lg-0 ">
+                                <input class="form-control mr-sm-2" type="search" placeholder="Recherche Article" aria-label="Search">
+                                <button class="btn btn-outline-danger my-2 my-sm-0 " type="submit" [routerLink]="['/ajoutarticle']">Ajouter Article</button>
+                        </form> 
+                       
+                    <hr>
+                    <h4>Régles general</h4>
+                    <p>
+                      This is a responsive dashboard-style layout that uses <a href="http://www.getbootstrap.com">Bootstrap 3</a>. You can use this template as a starting point to create something more unique.
+                    </p>
+                    <p>
+                      Visit the Bootstrap Playground at <a href="http://www.bootply.com">Bootply</a> to tweak this layout, or discover 1000's of Bootstrap code examples and snippets.
+                    </p>
+                  
+                    <hr>
+                  
+                   
+                  
+                </div><!--/col-span-6-->
+         
+           </div><!--/row-->
+          </div><!--/col-span-9-->
+        
+      </div><!--/row-->
+      <!-- /upper section -->
+    
+      

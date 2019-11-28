@@ -1,0 +1,44 @@
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
+    <a class="navbar-brand" [routerLink]="['/affichage']">ShopChop</a>
+</nav>
+<div class="container">
+<table class="table table-bordered">
+<thead>
+<tr>
+
+    <th>
+    <h3 class="panel-title" style="text-align: center;">Please log in</h3>
+    </th>
+</tr>
+</thead>
+    <tbody>
+            <tr>
+        <td>
+          <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+            <div class="form-group " >
+              <input id="mail" name="mail"  class="form-control" [(ngModel)]="email" #mail="ngModel" placeholder="Example@gmail.com" type="text" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+              
+              <div [hidden]="!mail.errors?.required || mail.pristine" class="alert alert-danger"> 
+                    Le mail est un champ obligatoire 
+                </div>
+             <input id="mdp" name="mdp" class="form-control" [(ngModel)]="passe" #mdp="ngModel" placeholder="*******" type="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+             <p>le mot de passe doit contenir au moins 8 caractères, une lettre majuscule et un nombre.
+                </p>
+             <div [hidden]="!mdp.errors?.required || mdp.pristine" class="alert alert-danger"> 
+                    Le mot de passe est un champ obligatoire 
+                </div>
+           
+            </div>
+            <button [disabled]="f.invalid" class="btn btn-lg btn-success btn-block" (click)="onAccueil()">Login</button>
+        </form>
+        </td>
+        </tr>
+        </tbody>
+        </table>
+</div>
+     
+        
+         
+  
+
