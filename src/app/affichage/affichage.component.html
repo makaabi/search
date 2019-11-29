@@ -54,7 +54,7 @@
                         
                         
                     <ng-container  *ngFor="let a of theArticles">
-                        <tr >
+                        <tr [hidden]="!(a.libelle.toUpperCase().indexOf(Libelleart.toUpperCase())!=-1)">
                             <td> <img [src]=a.photo width="50" height="50"/> </td>
                             <td> {{a.id}} </td>
                             <td> {{a.libelle}} </td>
@@ -71,10 +71,8 @@
                 <!--center-right-->
                 <div class="col-md-4">
                   
-                        <form class="form-inline my-2 my-lg-0 ">
-                                <input class="form-control mr-sm-2" type="search" placeholder="Recherche Article" aria-label="Search">
+                                <input class="mr-sm-2" type="search" placeholder="Recherche Article" aria-label="Search" [(ngModel)]="Libelleart" >
                                 <button class="btn btn-outline-danger my-2 my-sm-0 " type="submit" [routerLink]="['/ajoutarticle']">Ajouter Article</button>
-                        </form> 
                        
                     <hr>
                     <h4>Régles general</h4>

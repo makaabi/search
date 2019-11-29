@@ -9,6 +9,9 @@ import { Article } from '../article';
 })
 export class AffichageComponent implements OnInit {
   theArticles :Article[];
+
+  Libelleart:String="";
+  afficher:boolean=false;
   constructor(private articlesService:ArticlesService) { }
 
   ngOnInit() {
@@ -18,5 +21,9 @@ export class AffichageComponent implements OnInit {
   getid(id:String){
     this.articlesService.getArticleById(id);
   }
+
+  
+
+
 
 }
